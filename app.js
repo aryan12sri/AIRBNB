@@ -27,11 +27,13 @@
          mongoUrl: process.env.ATLAS_DB,
          touchAfter:24*60*60,
          crypto: {
-            secret:process.env.SECRET.
+            secret:process.env.SECRET
          }
     })
 
-    store.on("error")
+    store.on("error",()=>{
+        console.log("some erroe occured");
+    })
 
     app.use(session({
         store,
