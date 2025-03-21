@@ -1,0 +1,56 @@
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+    <div class="row mt-3">
+    <div class="col-8 offset-2">
+       <h3>Create a New Listing</h3>
+        <form action="/listing" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">TITLE</label>
+            <input type="text" name="list[title]"  placeholder="Write Title" class="form-control" required>
+            <div class="invalid-feedback">Please Enter The Title</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">DESCRIPTION</label>
+            <textarea name="list[description]" placeholder="Write your Description" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please Enter The Title</div>
+        </div>
+
+        <div class="mb-3 ">
+            <label for="image" class="form-label">UPLOAD IMAGE</label>
+            <input type="file" name="list[image]" class="form-control" >
+            <div class="invalid-feedback">Please Upload Image</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">PRICE</label>
+            <input  name="list[price]"  placeholder="Enter price" class="form-control" required >
+            <div class="invalid-feedback">Please Enter The Price</div>
+        </div>
+       
+        <div class="row">
+
+            <div class="mb-3 col-6">
+                <label for="location" class="form-label">LOCATION</label>
+                <input type="text" name="list[location]"  placeholder="Enter location" class="form-control" required>
+                <div class="invalid-feedback">Please Enter The Location</div>
+            </div>
+    
+            <div class="mb-3 col-6">
+
+                <label for="country" class="form-label">COUNTRY</label>
+                <input type="text" name="list[country]"  placeholder="Enter country" class="form-control" required>
+                <div class="invalid-feedback">Please Enter Country Name</div>
+
+            </div>
+        </div>
+        
+
+       <button  class="btn btn-primary mt-3 mb-4">ADD LISTING</button>
+
+    </form>  
+    </div>
+    </div>
+       
+</body>

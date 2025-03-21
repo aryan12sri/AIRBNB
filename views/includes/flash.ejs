@@ -1,0 +1,38 @@
+<style>
+    .remove{
+        display: none;
+    }
+</style>
+
+<%if(success && success.length){%>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3 flashinfo" role="alert">
+       <%=success%>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+<%}%>
+
+<%if(failure && failure.length){%>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3 flashinfo" role="alert">
+       <%=failure%>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>
+
+<%if(error && error.length){%>
+    <div class="alert alert-success alert-dismissible fade show col-6 offset-3 flashinfo" role="alert">
+       <%=error%>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<%}%>
+
+<script>
+
+    const flashinfo = document.getElementsByClassName("flashinfo");
+    Array.from(flashinfo).forEach(function(flash) {
+        setTimeout(() => {
+            flash.classList.add("remove");  
+        }, 2000);
+    });
+
+</script>

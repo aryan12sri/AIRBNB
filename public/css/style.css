@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 4rem;
+   background-color: white    ;
+}
+
+.fa-airbnb{
+    color: rgb(254, 4, 4);
+    font-size: 2rem;
+}
+
+.f-info-links,.f-info-name,.f-info-social{
+    margin: .7rem;
+}
+
+.f-info-links a{
+    text-decoration:none;
+    color: black;
+}
+
+-social a{
+    color: black;
+}
+
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-social a{
+   margin-left: 1rem;
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-text{
+    margin: 0;
+    padding: 0;
+}
+
+.index-new{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: .3;
+    background-color: white;
+}
+
+.show-img{
+    height: 40vh;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-body{
+    padding: 0;
+}
+
+
+#map
+ { 
+    height:400px; 
+    width: 100vh;
+    border: black 2px solid;
+    border-radius: 20px;
+ }

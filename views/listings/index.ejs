@@ -1,0 +1,127 @@
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+  
+  <div class="filters">
+    <a href="">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+    </a>
+    
+    <a href="">
+    <div class="filter">
+      <div><i class="fa-solid fa-chess-rook"></i></div>
+      <p>Castles</p>
+    </div>
+    </a>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-tractor"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-snowflake"></i></div>
+      <p>Artic</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-mountain-city"></i></i></div>
+      <p>Mountain</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-city"></i></i></div>
+      <p>Iconic city</p>
+    </div>
+
+    <div class="tax-switch">
+      <div class="form-check form-switch form-check-reverse">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+        <label class="form-check-label" for="flexSwitchCheckReverse">Include Taxes</label>
+      </div>
+    </div>
+  </div>
+     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 " >
+
+        <%for( list of allList){%>
+          <a href="/listing/<%= list._id %>  " class="index-new">
+            <div class="card col listing-card" style="width: 25rem;" >
+              <img src="<%= list.image.url %>" class="card-img-top" alt="no image" style="height: 20rem;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">   
+                <p class="card-text"><b><%= list.title %> <br></b>  &#8377;<%=Number(list.price).toLocaleString("en-IN")%>  <b class="tax"><i>+&nbsp;18%tax</i></b></p>
+              </div>
+            </div>
+          </a>
+          <%}%>
+
+   </div>
+</body>
+
+ <style>
+  .filters{
+    display:flex;
+    flex-wrap: wrap; 
+    align-items: center;
+  }
+
+  .filter{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    text-align: center;
+    opacity: .7;
+
+  }
+
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+
+  }
+
+  .filter p{
+    font-size: .8rem;
+  }
+
+  a{
+    text-decoration: none;
+    color:black;
+
+  }
+
+  .tax{
+    display: none;
+  }
+
+  .tax-switch{
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 3rem;
+    padding: 0rem 2rem;
+    margin-left: 25rem;
+  }
+ </style>
+           
+<script>
+  let taxswitch=document.getElementById("flexSwitchCheckReverse");
+  taxswitch.addEventListener("click",()=>{
+    let tax=document.getElementsByClassName("tax");
+    for(taxinfo of tax){
+
+      if(taxinfo.style.display!=="inline"){
+      taxinfo.style.display="inline";
+      }else{
+        taxinfo.style.display="none";
+      }
+
+    }
+  })
+</script> 
